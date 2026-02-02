@@ -1,16 +1,27 @@
 [project]
 name = "miu-logger"
-version = "0.1.0"
-description = "Multiprocessing-safe structured logging framework"
-authors = [{name="Bruno Miura"}]
-requires-python = ">=3.10"
-dependencies = [
-    "colorama",
-]
+version = "0.1.1"
+description = "Multiprocessing-safe domain-based logging framework with QueueListener architecture"
 readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Bruno Miura", email = "brumiura@gmail.com" }
+]
+keywords = ["logging", "multiprocessing", "queue", "structured-logging", "python-logging"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Logging",
+]
+
+dependencies = [
+    "colorama"
+]
 
 [build-system]
-requires = ["setuptools", "wheel"]  
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
@@ -18,4 +29,3 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
