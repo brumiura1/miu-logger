@@ -1,0 +1,21 @@
+[project]
+name = "miu-logger"
+version = "0.1.0"
+description = "Multiprocessing-safe structured logging framework"
+authors = [{name="Bruno Miura"}]
+requires-python = ">=3.10"
+dependencies = [
+    "colorama",
+]
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools", "wheel"]  
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
