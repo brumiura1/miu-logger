@@ -51,7 +51,7 @@ class SafeQueueListener(QueueListener):
             raise
 
 
-def setup_main_listener(config: LogConfig):
+def setup_main_listener(config: LogConfig) -> tuple[Queue, SafeQueueListener]:
     os.makedirs(config.log_dir, exist_ok=True)
 
     queue = Queue(-1)

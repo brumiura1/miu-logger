@@ -73,4 +73,10 @@ class LoggingRepository:
         return {"config": self.config, "queue": self.queue}
 
     def __setstate__(self, state):
-        self.__init__(state["config"], use_listener=False, queue=state["queue"])
+        self._is_shutdown = False
+        self.config = state["config"]
+        self.queue = state["queue"]
+        self.listener = None
+        self._domains = set(self.config.domains)
+        self._loggers = {}
+        atexit.register(self.shutdown)
